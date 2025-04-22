@@ -1,0 +1,626 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kamden Coursey - IT Professional Portfolio</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Inter', sans-serif;
+                background-color: #f9fafb; /* Very light gray */
+            }
+            /* Simple smooth scroll for anchor links */
+            html {
+                scroll-behavior: smooth;
+            }
+            /* Style for active navigation link */
+            .nav-link.active {
+                font-weight: 600;
+                color: #2563eb; /* Blue-600 */
+                border-bottom: 2px solid #2563eb;
+            }
+            /* Style for section headings */
+            .section-heading {
+                font-size: 1.875rem; /* text-3xl */
+                font-weight: 700; /* font-bold */
+                color: #1f2937; /* gray-800 */
+                margin-bottom: 1.5rem; /* mb-6 */
+                text-align: center;
+                border-bottom: 2px solid #d1d5db; /* gray-300 */
+                padding-bottom: 0.5rem; /* pb-2 */
+            }
+            /* General card style for sections */
+            .card {
+                background-color: white;
+                border-radius: 0.75rem; /* rounded-xl */
+                box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-lg */
+                padding: 1.5rem; /* p-6 */
+                margin-bottom: 1.5rem; /* mb-6 */
+            }
+             /* Ensure profile image covers the area without distortion */
+             .profile-image {
+                 object-fit: cover;
+             }
+             /* Style for the LinkedIn button */
+             .linkedin-button {
+                 display: inline-flex; /* Align icon and text */
+                 align-items: center;
+                 background-color: #0077b5; /* LinkedIn blue */
+                 color: white;
+                 font-weight: 500; /* medium */
+                 padding: 0.5rem 1rem; /* py-2 px-4 */
+                 border-radius: 0.375rem; /* rounded */
+                 transition: background-color 150ms ease-in-out;
+                 text-decoration: none; /* Remove underline */
+             }
+             .linkedin-button:hover {
+                 background-color: #005582; /* Darker LinkedIn blue on hover */
+             }
+             .linkedin-button svg {
+                 width: 1.25rem; /* w-5 */
+                 height: 1.25rem; /* h-5 */
+                 margin-right: 0.5rem; /* mr-2 */
+             }
+             /* Resume section specific styles */
+             #resume .card h3 {
+                 font-size: 1.25rem; /* text-xl */
+                 font-weight: 600; /* font-semibold */
+                 color: #1f2937; /* gray-800 */
+                 margin-bottom: 0.75rem; /* mb-3 */
+                 padding-bottom: 0.25rem; /* pb-1 */
+                 border-bottom: 1px solid #e5e7eb; /* border-gray-200 */
+             }
+              #resume .card h4 {
+                 font-size: 1.125rem; /* text-lg */
+                 font-weight: 500; /* font-medium */
+                 color: #374151; /* gray-700 */
+                 margin-bottom: 0.25rem; /* mb-1 */
+             }
+             #resume .card p, #resume .card li {
+                 color: #4b5563; /* gray-600 */
+                 line-height: 1.6; /* Improve readability */
+             }
+             #resume .card ul {
+                 list-style: disc;
+                 margin-left: 1.5rem; /* ml-6 */
+                 margin-bottom: 1rem; /* mb-4 */
+                 padding-left: 0.5rem; /* Add padding for list items */
+             }
+             #resume .card .work-item {
+                 margin-bottom: 1rem; /* mb-4 */
+             }
+             #resume .card .work-title {
+                 font-weight: 600; /* font-semibold */
+                 color: #1f2937; /* gray-800 */
+             }
+             #resume .card .work-details {
+                 font-size: 0.875rem; /* text-sm */
+                 color: #6b7280; /* gray-500 */
+                 margin-bottom: 0.25rem; /* mb-1 */
+             }
+              /* Style for the download button */
+             .download-button {
+                 display: inline-flex; /* Align icon and text */
+                 align-items: center;
+                 margin-top: 1.5rem; /* mt-6 */
+                 background-color: #1d4ed8; /* Blue-700 */
+                 color: white;
+                 font-weight: 500; /* medium */
+                 padding: 0.6rem 1.2rem; /* Adjusted padding */
+                 border-radius: 0.375rem; /* rounded */
+                 transition: background-color 150ms ease-in-out;
+                 text-decoration: none; /* Remove underline */
+             }
+             .download-button:hover {
+                 background-color: #1e40af; /* Blue-800 on hover */
+             }
+             .download-button svg {
+                 width: 1.25rem; /* w-5 */
+                 height: 1.25rem; /* h-5 */
+                 margin-right: 0.5rem; /* mr-2 */
+             }
+        </style>
+    </head>
+    <body class="text-gray-700">
+
+        <header class="bg-white shadow-md sticky top-0 z-50">
+            <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+                <div class="text-2xl font-bold text-gray-800">
+                    Kamden Coursey
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="nav-link text-gray-600 hover:text-blue-600 pb-1">About</a>
+                    <a href="#resume" class="nav-link text-gray-600 hover:text-blue-600 pb-1">Resume</a>
+                    <a href="#cover-letter" class="nav-link text-gray-600 hover:text-blue-600 pb-1">Cover Letter</a>
+                    <a href="#projects" class="nav-link text-gray-600 hover:text-blue-600 pb-1">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-blue-600 pb-1">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </nav>
+            <div id="mobile-menu" class="md:hidden hidden bg-white py-2">
+                <a href="#about" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About</a>
+                <a href="#resume" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Resume</a>
+                <a href="#cover-letter" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cover Letter</a>
+                <a href="#projects" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Projects</a>
+                <a href="#contact" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Contact</a>
+            </div>
+        </header>
+
+        <main class="max-w-6xl mx-auto p-4 md:p-8 mt-6">
+
+            <section id="about" class="mb-12 scroll-mt-20">
+                <h2 class="section-heading">About Me</h2>
+                <div class="card flex flex-col md:flex-row items-center">
+                    <img src="https://placehold.co/150x150/e0e7ff/4f46e5?text=Profile+Pic"
+                         alt="Kamden Coursey"
+                         class="profile-image w-32 h-32 md:w-40 md:h-40 rounded-full mr-0 md:mr-8 mb-4 md:mb-0 border-4 border-blue-200 shadow-sm">
+                    <div class="text-center md:text-left">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-2">Jeffrey Kamden Coursey</h3>
+                        <p class="mb-4">
+                            Aspiring IT Specialist with a strong foundation in Computer Information Technologies, specializing in network administration and systems support. Currently completing an Associate in Applied Science at Southcentral Kentucky Community and Technical College (Expected May 2025). Proven ability to troubleshoot technical issues, manage systems, and collaborate effectively, gained through academic projects and hands-on experience in fast-paced environments. Eager to apply technical skills and problem-solving abilities to support CoreTech's IT infrastructure and contribute to team success.
+                        </p>
+                        <p class="text-sm text-gray-600">Seeking the IT Specialist position at CoreTech.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="resume" class="mb-12 scroll-mt-20">
+                <h2 class="section-heading">Resume Highlights</h2>
+                 <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 border-b pb-1">Objective</h3>
+                    <p class="mb-5">Computer and Information Technologies graduate (Expected May 2025) seeking an IT Specialist position at CoreTech. Eager to leverage hands-on experience in network administration, systems support, hardware/software maintenance, and troubleshooting to contribute to maintaining a robust and efficient IT infrastructure.</p>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 border-b pb-1">Education</h3>
+                    <div class="mb-5">
+                        <p class="font-medium text-lg text-gray-700">Associate in Applied Science in Computer and Information Technologies</p>
+                        <p class="text-gray-600">Southcentral Kentucky Community and Technical College</p>
+                        <p class="text-sm text-gray-500">Expected Graduation: May 2025</p>
+                        <p class="mt-2 font-medium text-gray-700">Relevant Courses:</p>
+                        <ul class="list-disc list-inside text-gray-600 ml-4">
+                            <li>Networking Fundamentals (LAN/WAN, VLAN Concepts)</li>
+                            <li>Operating Systems (Windows, Linux)</li>
+                            <li>Computer Hardware and Software Installation & Troubleshooting</li>
+                            <li>Cybersecurity Basics (Firewall Concepts)</li>
+                            <li>Systems Analysis & Support</li>
+                            <li>Server Management Basics (Academic)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 border-b pb-1">Skills</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+                        <div>
+                            <h4 class="font-medium text-lg text-gray-700 mb-1">Technical Skills</h4>
+                            <ul class="list-disc list-inside text-gray-600 ml-4">
+                                <li>Hardware/Software Installation & Configuration</li>
+                                <li>Network Setup & Troubleshooting (LAN/WAN)</li>
+                                <li>Windows and Linux OS Administration</li>
+                                <li>Microsoft Office Suite (Word, Excel, PowerPoint)</li>
+                                <li>Help Desk Support & Ticketing Systems (Academic)</li>
+                                <li>VPN & Firewall Concepts</li>
+                                <li>Server Management Fundamentals (Academic)</li>
+                                <li>Human Machine Interface (HMI) Systems Operation</li>
+                                <li>Inventory Management Systems</li>
+                                <li>Remote Monitoring and Management (RMM) Tools (Familiarity)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-lg text-gray-700 mb-1">Soft Skills</h4>
+                            <ul class="list-disc list-inside text-gray-600 ml-4">
+                                <li>Problem Solving & Troubleshooting</li>
+                                <li>Technical Support & Customer Service</li>
+                                <li>Team Collaboration</li>
+                                <li>Time Management & Prioritization</li>
+                                <li>Adaptability & Eagerness to Learn</li>
+                                <li>Clear Communication</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 border-b pb-1">Work Experience Highlights</h3>
+                    <div class="work-item mb-4">
+                        <p class="work-title text-lg">Material Handler</p>
+                        <p class="work-details">Novelis, Guthrie, KY | July 2020 – Present</p>
+                        <ul class="list-disc list-inside text-gray-600 ml-4 mt-1">
+                            <li>Operate and monitor HMI systems for industrial processes.</li>
+                            <li>Collaborate with team members to maintain efficient workflow.</li>
+                        </ul>
+                    </div>
+                    <div class="work-item mb-4">
+                        <p class="work-title text-lg">Warehouse Associate</p>
+                        <p class="work-details">Valor Oils, Bowling Green, KY | Jan 2023 – Dec 2023</p>
+                         <ul class="list-disc list-inside text-gray-600 ml-4 mt-1">
+                            <li>Managed inventory using tracking systems and performed audits.</li>
+                            <li>Operated mobile equipment safely.</li>
+                        </ul>
+                    </div>
+                    <div class="work-item">
+                        <p class="work-title text-lg">Sales Representative</p>
+                        <p class="work-details">Cricket Wireless, Russellville, KY | Nov 2021 – May 2022</p>
+                         <ul class="list-disc list-inside text-gray-600 ml-4 mt-1">
+                            <li>Provided technical support and product guidance to customers.</li>
+                            <li>Handled transactions and managed inventory using POS systems.</li>
+                        </ul>
+                    </div>
+
+                     <a href="Kamden_Coursey_Resume.pdf" download="Kamden_Coursey_Resume.pdf" class="download-button">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                         </svg>
+                         Download Full Resume (PDF)
+                     </a>
+                     </div>
+            </section>
+
+            <section id="cover-letter" class="mb-12 scroll-mt-20">
+                <h2 class="section-heading">Cover Letter Summary</h2>
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 border-b pb-1">Letter for CoreTech IT Specialist Position</h3>
+                    <p class="italic text-gray-500 mb-4">Dated: April 22, 2025</p> <p class="mb-4">Dear Hiring Manager,</p>
+                    <p class="mb-4">
+                        I am writing to express my enthusiastic interest in the IT Specialist position at CoreTech, as advertised. As a dedicated student completing my Computer Information Technology (CIT) degree while working full-time, I have cultivated a strong technical skill set, excellent time management, and the determination necessary to excel in supporting CoreTech's IT systems.
+                    </p>
+                    <p class="mb-4">
+                        Balancing rigorous coursework with professional responsibilities has honed my ability to problem-solve effectively under pressure and adapt quickly to new challenges. My CIT program at SKYCTC has provided me with significant hands-on experience directly relevant to this role, including:
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 ml-4 mb-4 space-y-1">
+                        <li>Configuring and troubleshooting computer hardware, software, and network components (LAN/WAN).</li>
+                        <li>Fundamentals of system administration and maintenance for Windows and Linux environments.</li>
+                        <li>Understanding of network security principles, including firewall concepts and VPNs.</li>
+                        <li>Proficiency in the Microsoft Office Suite and familiarity with IT support methodologies and tools.</li>
+                    </ul>
+                    <p class="mb-4">
+                        My experience operating HMI systems at Novelis and providing technical guidance at Cricket Wireless further demonstrates my aptitude for working with technology and assisting users. I am eager to apply my education, dedication, and troubleshooting abilities within a dynamic IT environment like CoreTech's.
+                    </p>
+                    <p class="mb-4">
+                        I am confident that my skills align well with the requirements of this position and welcome the opportunity to discuss how I can contribute to CoreTech's success. Thank you for your time and consideration.
+                    </p>
+                    <p>Sincerely,</p>
+                    <p>Kamden Coursey</p>
+
+                    </div>
+            </section>
+
+            <section id="projects" class="mb-12 scroll-mt-20">
+                <h2 class="section-heading">Projects</h2>
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">IT Support Quick Help Page</h3>
+                    <p class="mb-4">
+                        A practical web-based tool developed as part of my coursework, designed to provide users with simple, step-by-step solutions for common IT issues like Wi-Fi connectivity problems, printer malfunctions, slow computer performance, and password recovery guidance.
+                    </p>
+                    <p class="mb-4">
+                        <strong>Skills Demonstrated:</strong> HTML, Tailwind CSS, JavaScript (basic DOM manipulation), Technical Documentation, User Support Principles, Problem Solving.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="project_help_page.html" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded transition duration-150 ease-in-out">
+                            View Project
+                        </a>
+                        </div>
+                     </div>
+                </section>
+
+            <section id="contact" class="scroll-mt-20">
+                 <h2 class="section-heading">Contact</h2>
+                 <div class="card text-center">
+                     <p class="text-lg mb-2">Interested in connecting? Reach out!</p>
+                     <p class="mb-1">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline-block mr-2 align-text-bottom text-blue-600">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                         </svg>
+                         <a href="mailto:kamdencoursey@gmail.com" class="text-blue-600 hover:underline">kamdencoursey@gmail.com</a>
+                     </p>
+                     <p class="mb-1">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline-block mr-2 align-text-bottom text-blue-600">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102A1.125 1.125 0 0 0 5.87 2.25H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                         </svg>
+                         (270) 893-8355
+                     </p>
+                     <p class="mb-4">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline-block mr-2 align-text-bottom text-blue-600">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                         </svg>
+                         Auburn, KY 42206 (General Location)
+                     </p>
+                     <a href="https://www.linkedin.com/in/jeffrey-coursey-a3a458286" target="_blank" class="linkedin-button mt-2">
+                         <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                           <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/>
+                         </svg>
+                         LinkedIn Profile
+                     </a>
+                     </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center p-4 bg-gray-800 text-gray-300 text-sm mt-12">
+            &copy; <span id="current-year"></span> Jeffrey Kamden Coursey. All Rights Reserved.
+        </footer>
+
+        <script>
+            // Simple mobile menu toggle
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Active navigation link highlighting based on scroll position (Scrollspy)
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('header nav .nav-link'); // Target only header nav links
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight; // Get section height
+                    // Adjust offset based on sticky header height (e.g., 70px) and trigger point (1/3 down the section)
+                    const headerOffset = 70;
+                    if (pageYOffset >= (sectionTop - headerOffset - (sectionHeight / 3))) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    // Check if the link's href matches the current section ID
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+                 // Highlight mobile menu links too
+                 const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+                 mobileNavLinks.forEach(link => {
+                    link.classList.remove('bg-gray-200', 'font-semibold'); // Remove active style
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('bg-gray-200', 'font-semibold'); // Add active style
+                    }
+                 });
+            });
+
+             // Close mobile menu when a link is clicked
+             const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+             mobileNavLinks.forEach(link => {
+                 link.addEventListener('click', () => {
+                     if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                         mobileMenu.classList.add('hidden');
+                     }
+                 });
+             });
+
+        </script>
+
+    </body>
+    </html>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CoreTech IT Support Helper</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <style>
+            /* Apply Inter font globally */
+            body {
+                font-family: 'Inter', sans-serif;
+                background-color: #f3f4f6; /* Light gray background */
+            }
+            /* Style for collapsible content */
+            .collapsible-content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease-in-out;
+                background-color: #ffffff; /* White background for content */
+                border-top: 1px solid #e5e7eb; /* gray-200 */
+            }
+            .collapsible-content.open {
+                max-height: 600px; /* Adjust max height as needed */
+            }
+            /* Style for the toggle arrow/icon */
+            .toggle-icon {
+                transition: transform 0.3s ease-out;
+            }
+            .collapsible-toggle.open .toggle-icon { /* Target icon when button has 'open' class */
+                transform: rotate(180deg);
+            }
+            /* Style for the toggle button */
+             .collapsible-toggle {
+                background-color: #f9fafb; /* gray-50 */
+                width: 100%;
+                padding: 1rem; /* p-4 */
+                text-align: left;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-weight: 500; /* medium */
+                color: #374151; /* gray-700 */
+                border: none; /* Remove default button border */
+                cursor: pointer;
+             }
+            .collapsible-toggle:hover {
+                background-color: #f3f4f6; /* gray-100 */
+            }
+             .collapsible-toggle:focus {
+                 outline: 2px solid transparent;
+                 outline-offset: 2px;
+                 /* Optional: Add a focus ring */
+                 /* box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); */
+             }
+             /* Container for each collapsible item */
+             .collapsible-item {
+                 border: 1px solid #e5e7eb; /* gray-200 */
+                 border-radius: 0.5rem; /* rounded-lg */
+                 box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* shadow-sm */
+                 overflow: hidden; /* Ensures content clipping */
+                 margin-bottom: 1rem; /* space-y-4 equivalent */
+             }
+             /* Ensure last item doesn't have extra margin */
+             .collapsible-item:last-child {
+                 margin-bottom: 0;
+             }
+        </style>
+    </head>
+    <body class="p-4 md:p-8">
+
+        <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+
+            <header class="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 md:p-8 text-white text-center rounded-t-xl">
+                <h1 class="text-3xl md:text-4xl font-bold mb-2">IT Support Quick Help</h1>
+                <p class="text-lg text-indigo-100">Simple solutions for common tech problems.</p>
+                <p class="text-sm mt-2 text-indigo-200">(Project by Kamden Coursey)</p>
+            </header>
+
+            <main class="p-6 md:p-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Select an Issue Below:</h2>
+
+                <div class="space-y-4"> <div class="collapsible-item">
+                        <button class="collapsible-toggle">
+                            <span class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-3 text-blue-500">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 0 1 1.06 0Z" />
+                                </svg>
+                                My Wi-Fi Isn't Working
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 toggle-icon text-gray-500">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                        <div class="collapsible-content p-4"> <ol class="list-decimal list-inside text-gray-600 space-y-2">
+                                <li><strong>Check Wi-Fi Switch:</strong> Make sure Wi-Fi is turned on (look for a switch on laptops or a setting).</li>
+                                <li><strong>Correct Network/Password:</strong> Double-check you're choosing the right network name and typing the password carefully.</li>
+                                <li><strong>Restart Device:</strong> Turn your computer or phone off and on again.</li>
+                                <li><strong>Restart Router:</strong> Unplug your Wi-Fi router, wait 30 seconds, plug it back in. Wait a few minutes for it to fully start.</li>
+                                <li><strong>Run Troubleshooter:</strong> Use the built-in network help tool on your computer (Search for "Troubleshoot network").</li>
+                                <li><strong>Check Other Devices:</strong> Can other phones/computers connect? If yes, the problem is likely your device. If no, it might be the router or internet service.</li>
+                                <li><strong>Update Driver (If needed):</strong> If only your device has issues, its network software (driver) might need updating.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="collapsible-item">
+                        <button class="collapsible-toggle">
+                             <span class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-3 text-green-500">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a8.25 8.25 0 0 1 8.586 8.586M6.72 13.829L3.75 16.11V3h6.75m8.966 18.228L18.75 16.11m5.707 2.118L18.75 16.11M21 3h-6.75M15 3v12m-1.125 6.11L12 21m-1.125-1.89L9.75 21m0 0L6.75 21m6.75 0v-2.118M15 15.75l-3-3m0 0l-3 3m3-3v-6m-1.125 6.11L12 12.75m-1.125 2.886L9.75 12.75m0 0L6.75 12.75m6.75 0v-3.375" />
+                                </svg>
+                                My Printer Won't Print
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 toggle-icon text-gray-500">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                        <div class="collapsible-content p-4"> <ol class="list-decimal list-inside text-gray-600 space-y-2">
+                                <li><strong>Check Power & Cables:</strong> Is the printer turned on? Are the cables plugged in securely?</li>
+                                <li><strong>Check Printer Display:</strong> Look for any error messages or blinking lights on the printer itself.</li>
+                                <li><strong>Check Paper & Ink:</strong> Make sure there's paper loaded and ink/toner isn't empty.</li>
+                                <li><strong>Correct Printer Selected:</strong> Did you choose the right printer when you clicked "Print"?</li>
+                                <li><strong>Clear Print Queue:</strong> Sometimes old print jobs get stuck. Search for "Printers" in settings, find your printer, open the queue, and cancel all documents.</li>
+                                <li><strong>Restart Computer & Printer:</strong> Turn both off, wait 10 seconds, then turn them back on (printer first).</li>
+                                <li><strong>Network Printer Check:</strong> If it's a network printer, ensure it's connected to the network (check its connection status).</li>
+                                <li><strong>Reinstall Driver (If needed):</strong> The printer's software (driver) might need to be reinstalled.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="collapsible-item">
+                        <button class="collapsible-toggle">
+                             <span class="flex items-center">
+                               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-3 text-orange-500">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                </svg>
+                                My Computer is Running Slow
+                            </span>
+                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 toggle-icon text-gray-500">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                        <div class="collapsible-content p-4"> <ol class="list-decimal list-inside text-gray-600 space-y-2">
+                                <li><strong>Restart Your Computer:</strong> This is often the quickest fix for temporary slowdowns.</li>
+                                <li><strong>Close Unused Programs:</strong> Too many apps open at once use up resources. Close ones you aren't using.</li>
+                                <li><strong>Check Task Manager:</strong> Press `Ctrl+Shift+Esc` (Windows) or use Activity Monitor (Mac) to see if any program is using too much CPU or Memory. Close it if possible.</li>
+                                <li><strong>Check Disk Space:</strong> If your main hard drive (usually C:) is almost full, it can slow things down. Delete unnecessary files or move them elsewhere.</li>
+                                <li><strong>Run Virus Scan:</strong> Malware can significantly slow down your computer. Run a full scan with your antivirus software.</li>
+                                <li><strong>Limit Startup Programs:</strong> Too many programs starting automatically when you turn on your computer can cause slowness. Check Task Manager (Startup tab) or System Settings to disable unnecessary ones.</li>
+                                <li><strong>Check for Updates:</strong> Ensure your operating system (Windows/macOS) and software are up-to-date.</li>
+                             </ol>
+                        </div>
+                    </div>
+
+                    <div class="collapsible-item">
+                        <button class="collapsible-toggle">
+                             <span class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-3 text-red-500">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" />
+                                </svg>
+                                I Forgot My Password
+                            </span>
+                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 toggle-icon text-gray-500">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                        <div class="collapsible-content p-4"> <p class="text-gray-600 mb-2">Password resets often require help from IT, especially for work accounts. Here's the general idea:</p>
+                             <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li><strong>Look for a "Forgot Password" Link:</strong> On the login screen, there might be a link to reset it yourself (often requires email or security questions).</li>
+                                <li><strong>Contact IT Help Desk:</strong> If it's a work account (like a Windows login) or you can't reset it yourself, you'll need to contact your IT department.</li>
+                                <li><strong>Verification:</strong> Be prepared to verify your identity so IT knows it's really you.</li>
+                                <li><strong>Temporary Password:</strong> IT will likely give you a temporary password and require you to change it immediately after logging in.</li>
+                             </ul>
+                        </div>
+                    </div>
+
+                </div> </main>
+
+            <footer class="text-center p-4 bg-gray-100 text-gray-500 text-sm rounded-b-xl border-t border-gray-200">
+                &copy; <span id="current-year-project"></span> Kamden Coursey - Mock Interview Project.
+                 <br> <a href="portfolio.html" class="text-blue-600 hover:underline">Back to Portfolio</a>
+            </footer>
+
+        </div> <script>
+            // JavaScript for collapsible sections
+            const projectToggles = document.querySelectorAll('.collapsible-toggle');
+
+            projectToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling; // Get the content div
+                    // Toggle the 'open' class on the content
+                    content.classList.toggle('open');
+                    // Toggle the 'open' class on the button itself for icon rotation
+                    toggle.classList.toggle('open');
+
+                    // Optional: Close other sections when one is opened
+                    // projectToggles.forEach(otherToggle => {
+                    //      if (otherToggle !== toggle) {
+                    //          const otherContent = otherToggle.nextElementSibling;
+                    //          otherContent.classList.remove('open');
+                    //          otherToggle.classList.remove('open'); // Remove open class from other buttons too
+                    //      }
+                    // });
+                });
+            });
+
+            // Set current year in footer (use a different ID to avoid conflicts if both pages are loaded somehow)
+            const projectYearSpan = document.getElementById('current-year-project');
+            if (projectYearSpan) {
+                projectYearSpan.textContent = new Date().getFullYear();
+            }
+        </script>
+
+    </body>
+    </html>
+    

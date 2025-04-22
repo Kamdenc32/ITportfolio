@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreTech IT Support Helper</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/heroicons@2.1.3/24/outline/esm/index.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/heroicons@2.1.3/24/outline/cjs/index.js"></script>
+    <style>
+        /* Apply Inter font globally */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+        /* Style for collapsible content */
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+        }
+        .collapsible-content.open {
+            max-height: 600px; /* Adjust max height as needed */
+        }
+        /* Style for the toggle arrow/icon */
+        .toggle-icon {
+            transition: transform 0.3s ease-out;
+        }
+        .open .toggle-icon {
+            transform: rotate(180deg);
+        }
+        /* Add some subtle hover effects */
+        .collapsible-toggle:hover {
+            background-color: #e5e7eb; /* Lighter gray on hover */
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+
+        <header class="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 md:p-8 text-white text-center rounded-t-xl">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">IT Support Quick Help</h1>
+            <p class="text-lg text-indigo-100">Simple solutions for common tech problems.</p>
+            <p class="text-sm mt-2 text-indigo-200">(Project for CoreTech IT Specialist Mock Interview)</p>
+        </header>
+
+        <main class="p-6 md:p-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Select an Issue Below:</h2>
+
+            <div class="space-y-4">
+
+                <div class="border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+                    <button class="collapsible-toggle w-full p-4 text-left flex justify-between items-center font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none">
+                        <span class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-3 text-blue-500">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 0 1 1.06 0Z" />
+                            </svg>
+                            My Wi-Fi Isn't Working
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 toggle-icon text-gray-500">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+                    <div class="collapsible-content bg-white p-4 border-t border-gray-200">
+                        <ol class="list-decimal list-inside text-gray-600 space-y-2">
+                            <li><strong>Check Wi-Fi Switch:</strong> Make sure Wi-Fi is turned on (look for a switch on laptops or a setting).</li>
+                            <li><strong>Correct Network/Password:</strong> Double-check you're choosing the right network name and typing the password carefully.</li>
+                            <li><strong>Restart Device:</strong> Turn your computer or phone off and on again.</li>
+                            <li><strong>Restart Router:</strong> Unplug your Wi-Fi router, wait 30 seconds, plug it back in. Wait a few minutes for it to fully start.</li>
+                            <li><strong>Run Troubleshooter:</strong> Use the built-in network help tool on your computer (Search for "Troubleshoot network").</li>
+                            <li><strong>Check Other Devices:</strong> Can other phones/computers connect? If yes, the problem is likely your device. If no, it might be the router or internet service.</li>
+                            <li><strong>Update Driver (If needed):</strong> If only your device has issues, its network software (driver) might need updating.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+                    <button class="collapsible-toggle w-full p-4 text-left flex justify-between items-center font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none">
+                         <span class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-3 text-green-500">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a8.25 8.25 0 0 1 8.586 8.586M6.72 13.829L3.75 16.11V3h6.75m8.966 18.228L18.75 16.11m5.707 2.118L18.75 16.11M21 3h-6.75M15 3v12m-1.125 6.11L12 21m-1.125-1.89L9.75 21m0 0L6.75 21m6.75 0v-2.118M15 15.75l-3-3m0 0l-3 3m3-3v-6m-1.125 6.11L12 12.75m-1.125 2.886L9.75 12.75m0 0L6.75 12.75m6.75 0v-3.375" />
+                            </svg>
+                            My Printer Won't Print
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 toggle-icon text-gray-500">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+                    <div class="collapsible-content bg-white p-4 border-t border-gray-200">
+                        <ol class="list-decimal list-inside text-gray-600 space-y-2">
+                            <li><strong>Check Power & Cables:</strong> Is the printer turned on? Are the cables plugged in securely?</li>
+                            <li><strong>Check Printer Display:</strong> Look for any error messages or blinking lights on the printer itself.</li>
+                            <li><strong>Check Paper & Ink:</strong> Make sure there's paper loaded and ink/toner isn't empty.</li>
+                            <li><strong>Correct Printer Selected:</strong> Did you choose the right printer when you clicked "Print"?</li>
+                            <li><strong>Clear Print Queue:</strong> Sometimes old print jobs get stuck. Search for "Printers" in settings, find your printer, open the queue, and cancel all documents.</li>
+                            <li><strong>Restart Computer & Printer:</strong> Turn both off, wait 10 seconds, then turn them back on (printer first).</li>
+                            <li><strong>Network Printer Check:</strong> If it's a network printer, ensure it's connected to the network (check its connection status).</li>
+                            <li><strong>Reinstall Driver (If needed):</strong> The printer's software (driver) might need to be reinstalled.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+                    <button class="collapsible-toggle w-full p-4 text-left flex justify-between items-center font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none">
+                         <span class="flex items-center">
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-3 text-orange-500">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                            </svg>
+                            My Computer is Running Slow
+                        </span>
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 toggle-icon text-gray-500">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+                    <div class="collapsible-content bg-white p-4 border-t border-gray-200">
+                         <ol class="list-decimal list-inside text-gray-600 space-y-2">
+                            <li><strong>Restart Your Computer:</strong> This is often the quickest fix for temporary slowdowns.</li>
+                            <li><strong>Close Unused Programs:</strong> Too many apps open at once use up resources. Close ones you aren't using.</li>
+                            <li><strong>Check Task Manager:</strong> Press `Ctrl+Shift+Esc` (Windows) or use Activity Monitor (Mac) to see if any program is using too much CPU or Memory. Close it if possible.</li>
+                            <li><strong>Check Disk Space:</strong> If your main hard drive (usually C:) is almost full, it can slow things down. Delete unnecessary files or move them elsewhere.</li>
+                            <li><strong>Run Virus Scan:</strong> Malware can significantly slow down your computer. Run a full scan with your antivirus software.</li>
+                            <li><strong>Limit Startup Programs:</strong> Too many programs starting automatically when you turn on your computer can cause slowness. Check Task Manager (Startup tab) or System Settings to disable unnecessary ones.</li>
+                            <li><strong>Check for Updates:</strong> Ensure your operating system (Windows/macOS) and software are up-to-date.</li>
+                         </ol>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+                    <button class="collapsible-toggle w-full p-4 text-left flex justify-between items-center font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none">
+                         <span class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-3 text-red-500">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" />
+                            </svg>
+                            I Forgot My Password
+                        </span>
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 toggle-icon text-gray-500">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+                    <div class="collapsible-content bg-white p-4 border-t border-gray-200">
+                        <p class="text-gray-600 mb-2">Password resets often require help from IT, especially for work accounts. Here's the general idea:</p>
+                         <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li><strong>Look for a "Forgot Password" Link:</strong> On the login screen, there might be a link to reset it yourself (often requires email or security questions).</li>
+                            <li><strong>Contact IT Help Desk:</strong> If it's a work account (like a Windows login) or you can't reset it yourself, you'll need to contact your IT department.</li>
+                            <li><strong>Verification:</strong> Be prepared to verify your identity so IT knows it's really you.</li>
+                            <li><strong>Temporary Password:</strong> IT will likely give you a temporary password and require you to change it immediately after logging in.</li>
+                         </ul>
+                    </div>
+                </div>
+
+            </div> </main>
+
+        <footer class="text-center p-4 bg-gray-100 text-gray-500 text-sm rounded-b-xl border-t border-gray-200">
+            &copy; <span id="current-year"></span> Your Name - Mock Interview Project.
+        </footer>
+
+    </div> <script>
+        // JavaScript for collapsible sections
+        const toggles = document.querySelectorAll('.collapsible-toggle');
+
+        toggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling; // Get the content div
+                const parent = toggle.closest('.border'); // Get the container div
+
+                // Toggle the 'open' class on the content
+                content.classList.toggle('open');
+                // Toggle the 'open' class on the parent for icon rotation
+                parent.classList.toggle('open');
+
+                // Optional: Close other sections when one is opened
+                // toggles.forEach(otherToggle => {
+                //     if (otherToggle !== toggle) {
+                //         const otherContent = otherToggle.nextElementSibling;
+                //         const otherParent = otherToggle.closest('.border');
+                //         otherContent.classList.remove('open');
+                //         otherParent.classList.remove('open');
+                //     }
+                // });
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
